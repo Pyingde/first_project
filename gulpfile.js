@@ -1,7 +1,9 @@
-
-
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+// 超级监听
+var browserSync = require('browser-sync');
+
+
 
 gulp.task('csxSass',function(){
     gulp.src('./src/sass/*.scss')
@@ -29,7 +31,6 @@ gulp.task('jthome',function(){
 // 自动刷新服务器
 // php服务器（12306）：能解析php文件
 // browserSync服务器（666）：能自动刷新
-var browserSync = require('browser-sync');
 gulp.task('se',function(){
     // 创建服务器
     browserSync({
