@@ -1,0 +1,7 @@
+#add_msg { width: 800px; margin: 100px auto; }
+
+#add_msg .add_new { color: #555555; padding-bottom: 5px; border-bottom: 1px solid #555555; }
+
+#add_msg div { margin-top: 20px; }
+
+#add_msg .push { margin-top: 10px; display: block; color: #555555; height: 40px; text-align: center; line-height: 40px; border-radius: 5px; text-decoration: none; background-color: #58bc58; }
