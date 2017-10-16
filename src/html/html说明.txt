@@ -1,0 +1,10 @@
+Header.html ===>=>=>=> 头部公共部分  
+Lnav.html    ===>=>=>=> 左边固定的侧边导航
+TB.css ===》》他们两的公共样式
+SET.js  ===>>  他们两的公共js
+
+
+login  ===>>  登录页面
+login.js  login.css ==> 样式和js
+
+proceeds.html ===> 收款页面静态

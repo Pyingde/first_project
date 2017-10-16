@@ -1,7 +1,5 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-// 超级监听
-var browserSync = require('browser-sync');
 
 
 
@@ -12,22 +10,24 @@ gulp.task('csxSass',function(){
 });
 
 // 监听任务
-gulp.task('jt',function(){
-    gulp.watch('./src/sass/*.scss',['csxSass'])
-})
+// gulp.task('jt',function(){
+//     gulp.watch('./src/sass/*.scss',['csxSass'])
+// })
 
-// home监听任务
-gulp.task('home',function(){
-    gulp.src('./src/sass/home.scss')
-        .pipe(sass().on('error',sass.logError))
-        .pipe(gulp.dest('./src/css/'));
-});
+// // home监听任务
+// gulp.task('home',function(){
+//     gulp.src('./src/sass/home.scss')
+//         .pipe(sass().on('error',sass.logError))
+//         .pipe(gulp.dest('./src/css/'));
+// });
 
-// 监听任务
-gulp.task('jthome',function(){
-    gulp.watch('./src/sass/home.scss',['home'])
-})
+// // 监听任务
+// gulp.task('jthome',function(){
+//     gulp.watch('./src/sass/home.scss',['home'])
+// })
 
+// 超级监听
+var browserSync = require('browser-sync');
 // 自动刷新服务器
 // php服务器（12306）：能解析php文件
 // browserSync服务器（666）：能自动刷新
@@ -38,7 +38,7 @@ gulp.task('se',function(){
         // server:'./src',
 
         // 代理
-        proxy:'http://localhost',
+        proxy:'http://localhost/csx',
 
         // 指定服务器端口（默认：3000）
         port:666,
