@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+    <link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../css/TB.css" />
+    <link rel="stylesheet" type="text/css" href="../css/proceeds.css" />
+    <script src="../lib/require.js" data-main="../js/proceeds"></script>
+</head>
+<body>
+    <div id="Header"></div>
+    <div id="Lnav"></div>
+    <div id='proceeds'>
+        <ol class="breadcrumb">
+            <li><i class="fa fa-home"></i><a href="index.html">Home</a> ></li>
+            <li><i class="icon_document_alt"></i>收银 </li>
+            <!-- 扫码枪 ->  .in input -->
+            <li class="ip">商品条码：<input type="text" value="123456"/></li>
+        </ol>
+        <!-- 音频位置 -->
+        <div id="embed"></div>
+        
+        <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>序号</th>
+                    <th>商品编码</th>
+                    <th>商品条码</th>
+                    <th>商品名称</th>
+                    <th>型号规格</th>
+                    <th>厂家产地</th>
+                    <th>质量等级</th>
+                    <th>单位</th>
+                    <th>数量</th>
+                    <th>原价</th>
+                    <th>折扣（%）</th>
+                    <th>单价</th>
+                    <th>金额</th>
+                    <th>删除</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- <tr>
+                    <th scope="row">1</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                  </tr>
+ -->            </tbody>
+              </table>
+
+        <div class="op">
+            <div class="money">
+                <span>总计：</span><input type="text" class="form-control" id="total"/>
+                <span>调减：</span><input type="text" class="form-control" id="cut" value="0"/>
+                <span>应收：</span><input type="text" class="form-control" id="receipt"/>
+            </div>
+            <div class="front">
+                <span>前单应收：</span><input type="text" class="form-control"/>
+                <span>前单收款：</span><input type="text" class="form-control"/>
+                <span>前单找零：</span><input type="text" class="form-control"/>
+            </div>
+            <div class="click">
+                <button>落单</button>
+                <button>挂单</button>
+                <button>题单</button>
+                <button>打印</button>
+                <button>结算</button>
+                <button>退出</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
