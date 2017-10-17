@@ -17,7 +17,7 @@
             <li><i class="fa fa-home"></i><a href="index.html">Home</a> ></li>
             <li><i class="icon_document_alt"></i>收银 </li>
             <!-- 扫码枪 ->  .in input -->
-            <li class="ip">商品编码：<input type="text" /></li>
+            <li class="ip">商品条码：<input type="text" value="123456"/></li>
         </ol>
         <!-- 音频位置 -->
         <div id="embed"></div>
@@ -38,6 +38,7 @@
                     <th>折扣（%）</th>
                     <th>单价</th>
                     <th>金额</th>
+                    <th>删除</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -55,9 +56,9 @@
 
         <div class="op">
             <div class="money">
-                <span>总计：</span><input type="text" class="form-control"/>
-                <span>调减：</span><input type="text" class="form-control"/>
-                <span>应收：</span><input type="text" class="form-control"/>
+                <span>总计：</span><input type="text" class="form-control" id="total"/>
+                <span>调减：</span><input type="text" class="form-control" id="cut" value="0"/>
+                <span>应收：</span><input type="text" class="form-control" id="receipt"/>
             </div>
             <div class="front">
                 <span>前单应收：</span><input type="text" class="form-control"/>

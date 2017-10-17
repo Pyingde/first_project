@@ -46,10 +46,7 @@ var obj = {
 						console.log('Error:'+ err);
 						return;
 					}
-					// console.log(_data)
 				    if(result.length>0){
-				    	var result = {"CG":result[0].CG,"CP":result[0].CP,"SY":result[0].SY}
-				    	// console.log(result)
 					    _callback(result);
 				    }else{
 				    	_callback(false);

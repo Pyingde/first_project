@@ -49,8 +49,23 @@ var router = {
 				_callback(apiResult(true, null,'恭喜你登录成功', pand));
 			}
 		})
-
 	},
+	"/sy": function(_data, _callback){
+		
+		db.find("test", _data, function(result){
+			
+			var pand = result
+			if(pand == false){
+				
+				console.log("sy - user.js");
+				_callback(JSON.stringify(pand));
+			}else{
+				console.log(pand)
+				_callback(JSON.stringify(pand));
+			}
+		})
+	},
+
 	"/att": {
 		GET:function(){},
 		POST:function(){}

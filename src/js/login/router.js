@@ -38,7 +38,7 @@ module.exports = {
                 // console.log(pos)
                 if(typeof allRouter[_pathname] == "function"){
                     allRouter[_pathname](pos, function(result){
-                        console.log(result)
+                        
                         response.write(result);
                         response.end();
                     })

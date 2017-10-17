@@ -11,9 +11,8 @@ require.config({
     }
 });
 require(['jquery','TBload','sets'],function($,TB,sets){
-    // TB[0];
-    // TB[1];
     TB()
-    // console.log(TB[0])
+    setTimeout(function(){
     sets();
+    },500)
 })
