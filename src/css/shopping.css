@@ -42,4 +42,6 @@
 
 #right .main .main_foot span.active { background-color: #1A2732; color: white; }
 
+#right .main .main_foot button { margin-left: 10px; }
+
 #right .main .main_foot input { width: 50px; text-align: center; }

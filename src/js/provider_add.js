@@ -1,12 +1,10 @@
 require.config({
 	paths:{
 		jquery:"../lib/jquery-3.1.1",
-		provider_add:"../api/provider_add"
-	},
-	
-	
+		provider_addProvider:"../api/provider_addProvider"
+	}	
 });
 
-require(['jquery','provider_add'],function($,provider_add){
-	provider_add.provider_add();
+require(['jquery','provider_addProvider'],function($,provider_addProvider){
+	provider_addProvider.provider_addProvider();
 });
