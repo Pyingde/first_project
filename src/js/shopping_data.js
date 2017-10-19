@@ -4,7 +4,7 @@ define(['jquery'],function($){
 			// 当前分页
 			var pageNo = 1;
 			// 每页显示数量
-			var qty = 1;
+			var qty = 10;
 			//设置全局变量foag保证查询时数据不会变回初始值
 //			var foag=0;
 			//连接数据库动态生成表格
@@ -88,7 +88,7 @@ define(['jquery'],function($){
 				$('tr').on('click','.glyphicon-wrench',function(){
 					
 					var goods_name = $(this).parent().parent().children().eq(1).html();
-					window.location.href='shopping_updata.html?'+goods_name;
+					window.location.href='html/shopping_updata.html?'+goods_name;
 				});
 				
 				// 生成分页				
@@ -118,35 +118,20 @@ define(['jquery'],function($){
 				var ye =$('<span>页</span>');
 				$page.append(ye);	
 				//生成进货，退货按钮
-				var btn_in =$('<button id="btn_in">商品入库</button>');
+				var btn_in =$('<button id="btn_in">打印进货订单表</button>');
 				$page.append(btn_in);	
-				var btn_out =$('<button id="btn_out">退货</button>');
+				var btn_out =$('<button id="btn_out">打印退货订单表</button>');
 				$page.append(btn_out);	
 				
-				//点击商品入库按钮，将订单商品添加进入仓库
+				//点击打印采购单按钮，生成订单表
 				var btn_in=$('#btn_in');
 				var btn_out=$('#btn_out');
 				btn_in.click(function(){
-					$.post("http://localhost:666/selectAllgoods",{
-							
-					},function(msg){
-						console.log(msg.data);
-						//将数组转化为json对象再传回后端
-						var msg_obj = JSON.stringify(msg.data);
-						$.post("http://localhost:666/insertAllgoods",{
-							msg_obj
-						},function(msg){
-							console.log(msg);
-								
-						})	
-					})
+					window.location.href='html/table.html?进货订单表';
+				});
+				btn_out.click(function(){
+					window.location.href='html/table.html?退货单表';
 				})
-				
-				
-				
-				
-				
-				
 				//点击上下一页获取分页信息
 				$('.next_page').on('click',function(){
 					if(pageNo<msg.pageLen){

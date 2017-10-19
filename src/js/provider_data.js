@@ -104,7 +104,7 @@ define(['jquery'],function($){
 					
 					var name = $(this).parent().parent().children().eq(1).html();
 					console.log(name);
-					window.location.href='provider_updata.html?'+name;
+					window.location.href='html/provider_updata.html?'+name;
 				});
 				
 				// 生成分页				

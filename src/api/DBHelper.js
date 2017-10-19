@@ -1,8 +1,8 @@
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
 var db;
-var url = "mongodb://10.3.131.32:27017/market";
-MongoClient.connect("mongodb://localhost:27017/csx", function(err, database) {
+//var url = "mongodb://10.3.131.32:27017/market";
+MongoClient.connect("mongodb://localhost:27017/market", function(err, database) {
   if(err) throw err;
   
   db = database;
@@ -19,8 +19,8 @@ module.exports = {
             _callback({status: true, data: dataset});
         })
     },
-    update: function(_collection, _data, _callback){
-        var i = db.collection(_collection).update(_condition2[0],_condition2[1]).then(function(result){
+    update: function(_collection, _condition, _callback){
+        var i = db.collection(_collection).update(_condition[0],_condition[1]).then(function(result){
             _callback({status: true});
         });
     },
