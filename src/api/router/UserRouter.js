@@ -1,5 +1,5 @@
 var bodyparser = require("body-parser");
-var db = require("../DBHelper.js");
+var db = require("../../../../../DB.js");
 // var urlencode = bodyparser.urlencoded({extended: false});
 
 module.exports = {
@@ -11,8 +11,9 @@ module.exports = {
         app.use(bodyparser.urlencoded({ extended: false }));
         // post请求
         app.post("/login", function(request, response){
-            db.UserSelect("user", {name:request.body.name}, function(result){
-                console.log(result)
+            console.log(request.body)
+            db.Select("user", {"username":request.body.name,password:request.body.password}, function(result){
+                    console.log(result)
                     response.send(result);
                 });
         });
