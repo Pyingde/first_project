@@ -25,7 +25,7 @@ $(()=>{
             return false;
         }
         $.post(baseUrl+"/login", {
-            'username': $('#username').val(),
+            'name': $('#username').val(),
             'password': $('#password').val(),
         }
         , function(response){
