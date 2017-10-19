@@ -1,7 +1,7 @@
 define(['jquery'],function($){
     return ()=>{
-        $('#Header').load('./Header.html');
-        $('#Lnav').load('./Lnav.html');
+        $('#Header').load('html/Header.html');
+        $('#Lnav').load('html/Lnav.html');
     }
 
     // return [$('#Header').load('./Header.html'),$('#Lnav').load('./Lnav.html')]

@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8" />
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="../css/base.css" />
-    <link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="../css/TB.css" />
-    <link rel="stylesheet" type="text/css" href="../css/proceeds.css" />
-    <script src="../lib/require.js" data-main="../js/proceeds"></script>
+    <base href="../" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/TB.css" />
+    <link rel="stylesheet" type="text/css" href="css/proceeds.css" />
+    <script src="lib/require.js" data-main="js/proceeds"></script>
+    
 </head>
 <body>
     <div id="Header"></div>
@@ -47,7 +49,7 @@
                   </tr>
                   <tr>
                     <th scope="row">2</th>
-                  </tr>
+                  </tr>跨域
                   <tr>
                     <th scope="row">3</th>
                   </tr>
@@ -66,14 +68,16 @@
                 <span>前单找零：</span><input type="text" class="form-control"/>
             </div>
             <div class="click">
-                <button>落单</button>
-                <button>挂单</button>
-                <button>题单</button>
-                <button>打印</button>
-                <button>结算</button>
-                <button>退出</button>
+                <button>落单(Del)</button>
+                <button>挂单(G)</button>
+                <button>提单(T)</button>
+                <button>打印(D)</button>
+                <button>结算(Space)</button>
+                <button>退出(Esc)</button>
             </div>
         </div>
+
+
     </div>
 </body>
 </html>

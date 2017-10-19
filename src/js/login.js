@@ -10,28 +10,40 @@ $(()=>{
         $('#main').css({'left':left,'top':top});
     });
 
-    $('#but').click(function(){
-        $.post("http://localhost:999/login", {
-            'username': $('#username').val(),
+    $('#but').on('click',function(){
+        post();
+    })
+    function post(){
+        if(!$('#username').val()){
+            alert('请输入用户名');
+            $('#username').focus();
+            return false;
+        }
+        if(!$('#password').val()){
+            alert('请输入用户密码');
+            $('#password').focus();
+            return false;
+        }
+        $.post(baseUrl+"/login", {
+            'name': $('#username').val(),
             'password': $('#password').val(),
         }
         , function(response){
-            response=JSON.parse(response)
-            if(response.status){
+            // response=JSON.parse(response)
+            if(response != false){
                 alert('登录成功');
-                var root = JSON.stringify(response.cookie);
-                var date = new Date();
-                date.setDate(date.getDate()+15);
-                console.log(date)
-                document.cookie = "root=" + root + ";path=/;expires=" + date;
-                document.cookie = "name=666";
-                
-                document.cookie="csx=csx";
-                console.log(document.cookie)
+                // window.location.href='http://localhost/csx/first_project/src';
+                console.log(response)
             } else {
-                alert(response.message);
+                alert('用户或密码输入有误');
             }
         })
+    }
+    // 回车手动执行
+    $(window).keydown(function(e){
+        if(e.keyCode === 13){
+            post();
+        }
     })
 
 })
