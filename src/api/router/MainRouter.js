@@ -8,6 +8,10 @@ var productRouter = require("./ProductRouter.js");
 var proceedsRouter = require("./ProceedsRouter.js");
 // 会员
 var memberRouter = require("./MemberRouter.js");
+//商品订单
+var ShoppingRouter = require("./ShoppingRouter.js");
+//供应商
+var ProviderRouter = require("./ProviderRouter.js");
 
 module.exports = {
     Register: function(app){
@@ -30,6 +34,9 @@ module.exports = {
         // proceedsRouter.
         // 产品管理
         // 采购管理
+        ShoppingRouter.Goodlist(app);
+        //供应商
+        ProviderRouter.Register(app);
 
     }
 }

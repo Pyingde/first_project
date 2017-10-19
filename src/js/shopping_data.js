@@ -4,7 +4,7 @@ define(['jquery'],function($){
 			// 当前分页
 			var pageNo = 1;
 			// 每页显示数量
-			var qty = 1;
+			var qty = 10;
 			//设置全局变量foag保证查询时数据不会变回初始值
 //			var foag=0;
 			//连接数据库动态生成表格
@@ -88,7 +88,7 @@ define(['jquery'],function($){
 				$('tr').on('click','.glyphicon-wrench',function(){
 					
 					var goods_name = $(this).parent().parent().children().eq(1).html();
-					window.location.href='shopping_updata.html?'+goods_name;
+					window.location.href='html/shopping_updata.html?'+goods_name;
 				});
 				
 				// 生成分页				
