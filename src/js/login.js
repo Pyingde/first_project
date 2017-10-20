@@ -25,17 +25,18 @@ $(()=>{
             return false;
         }
         $.post(baseUrl+"/login", {
-            'name': $('#username').val(),
+            'username': $('#username').val(),
             'password': $('#password').val(),
         }
         , function(response){
             // response=JSON.parse(response)
-            if(response != false){
-                alert('登录成功');
-                // window.location.href='http://localhost/csx/first_project/src';
-                console.log(response)
-            } else {
+            if(response == false){
                 alert('用户或密码输入有误');
+                return false;
+            } else if(response == true){
+                alert('登录成功');
+                window.location.href='http://localhost/csx/first_project/src';
+                console.log(response)
             }
         })
     }

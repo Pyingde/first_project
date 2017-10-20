@@ -117,29 +117,22 @@ define(['jquery'],function($){
 				$page.append(input);
 				var ye =$('<span>页</span>');
 				$page.append(ye);	
+
+
 				//生成进货，退货按钮
-				var btn_in =$('<button id="btn_in">商品入库</button>');
+				var btn_in =$('<button id="btn_in">打印进货订单表</button>');
 				$page.append(btn_in);	
-				var btn_out =$('<button id="btn_out">退货</button>');
+				var btn_out =$('<button id="btn_out">打印退货订单表</button>');
 				$page.append(btn_out);	
 				
-				//点击商品入库按钮，将订单商品添加进入仓库
+				//点击打印采购单按钮，生成订单表
 				var btn_in=$('#btn_in');
 				var btn_out=$('#btn_out');
 				btn_in.click(function(){
-					$.post("http://localhost:666/selectAllgoods",{
-							
-					},function(msg){
-						console.log(msg.data);
-						//将数组转化为json对象再传回后端
-						var msg_obj = JSON.stringify(msg.data);
-						$.post("http://localhost:666/insertAllgoods",{
-							msg_obj
-						},function(msg){
-							console.log(msg);
-								
-						})	
-					})
+					window.location.href='html/table.html?进货订单表';
+				});
+				btn_out.click(function(){
+					window.location.href='html/table.html?退货单表';
 				})
 				
 				

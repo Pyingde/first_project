@@ -10,9 +10,9 @@ require.config({
 
 require(['jquery','shopping_data','Tbload','sets'],function($,shopping_data,Tbload,sets){
 	shopping_data.shopping_data();
-//	Tbload();
-//	setTimeout(function(){
-//		sets();
-//	},500);
+	Tbload();
+	setTimeout(function(){
+		sets();
+	},500);
 	
 });

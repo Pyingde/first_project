@@ -1,5 +1,5 @@
-html,body{background: #ececec; height: 100%;}
-#main{background: #fff; height: 300px; width: 500px; position: relative; border-radius:8px; overflow:hidden; border:1px solid #888; }
+html,body{background: #222; height: 100%;}
+#main{background: #fff; height: 300px; width: 500px; position: relative; border-radius:8px; overflow:hidden; border:1px solid #888; box-shadow:0 0 10px #ccc;}
 h1{background: #394A59; color: #fff; padding:0 20px; height: 50px; line-height:50px; font-size:34px; position:relative; margin-top:8px; margin-bottom:25px; }
 .form{padding:0 20px; background: #fff; overflow:hidden;}
 #but{position:absolute; left: 194px; width: 100px; margin-top:10px;}

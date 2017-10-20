@@ -10,9 +10,9 @@ require.config({
 
 require(['jquery','provider_data','Tbload','sets'],function($,provider_data,Tbload,sets){
 	provider_data.provider_data();
-//	Tbload();
-//	setTimeout(function(){
-//		sets();
-//	},500);
+	Tbload();
+	setTimeout(function(){
+		sets();
+	},500);
 	
 });

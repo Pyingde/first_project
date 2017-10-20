@@ -12,6 +12,8 @@ var memberRouter = require("./MemberRouter.js");
 var ShoppingRouter = require("./ShoppingRouter.js");
 //供应商
 var ProviderRouter = require("./ProviderRouter.js");
+//产品
+var productRouter = require("./productRouter.js");
 
 module.exports = {
     Register: function(app){
@@ -30,9 +32,12 @@ module.exports = {
 
         // 用户管理
         userRouter.Register(app);
-        // 收银管理
-        // proceedsRouter.
+        // 收银sy管理
+        proceedsRouter.SY(app)
+        proceedsRouter.Voucher(app)
+        proceedsRouter.Money(app)
         // 产品管理
+        productRouter.Register(app);
         // 采购管理
         ShoppingRouter.Goodlist(app);
         //供应商

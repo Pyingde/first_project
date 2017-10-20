@@ -11,11 +11,14 @@ module.exports = {
         app.use(bodyparser.urlencoded({ extended: false }));
         // post请求
         app.post("/login", function(request, response){
-            console.log(request.body)
-            console.log(request.body.password)
-            db.select("user", {"username":request.body.name,"password":request.body.password}, function(result){
-                    console.log(result)
-                    response.send(result);
+            db.select("user", {"username":request.body.username,"password":request.body.password}, function(result){
+                console.log(result)
+                    if(result.data.length>0){
+                        response.send(true);
+                    }else{
+                        response.send(false);
+
+                    }
                 });
         });
     }

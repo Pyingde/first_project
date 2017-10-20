@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>后台管理系统</title>
+	<base href="../">
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/TB.css">
+	<link rel="stylesheet" type="text/css" href="css/product.css">
+	
+	<script src="lib/require.js" data-main = "js/products" ></script>
+	<script type="text/javascript" src="lib/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/product.js"></script>
+	<!-- <script type="text/javascript" src="../js/TBload.js"></script> -->
+</head>
+<body>
+	<!-- <nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid"> 
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">超市后台管理系统</a>
+			</div>
+			<form class="navbar-form navbar-left" role="search">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Search">
+				</div>
+				<button type="submit" class="btn btn-default">提交</button>
+			</form>
+		</div>
+	</nav> -->
+	<header id="Header"></header>
+	<div id="Lnav"></div>
+
+	<div class="container-fluid">
+		<div class="row">
+			
+			<!-- <div class="col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li class="active"><a href="#">首页</a></li>
+				</ul>
+				<ul class="nav nav-sidebar">
+					<li><a href="#">信息建立</a></li>
+					<li><a href="#">信息查询</a></li>
+					<li><a href="#">信息管理</a></li>
+				</ul>
+				<ul class="nav nav-sidebar">
+					<li><a href="#">设置</a></li>
+					<li><a href="#">帮助</a></li>
+				</ul>
+			</div> -->
+			<div class="col-md-10 main">
+				<!-- <h1 class="page-header">产品管理</h1> -->
+				<div class="search">
+					<!-- <input type="text" name="" class="chazhao" placeholder="查询产品">
+					<button type="button" class="btn btn-sm btnser">查询</button>
+					<button type="button" class="btn btn-sm btnadd">新增</button> -->
+					<div>
+						<div class="col-lg-3">
+						    <div class="input-group">
+						      <input type="text" class="form-control chazhao" placeholder="查询产品...">
+						      <span class="input-group-btn">
+						        <button class="btn btn-default btnser" type="button">查询</button>
+						      </span>
+						    </div><!-- /input-group -->
+						 </div><!-- /.col-lg-6 -->
+					</div><!-- /.row -->
+					<button type="button" class="btn btn-info btnadd" id="btnNewItem">新增</button>
+				</div>
+				<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="new">
+					<div class="modal-dialog modal-lg" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<h4 class="modal-title" id="gridSystemModalLabel">新增产品</h4>
+							</div>
+							<div class="modal-body">
+								<form class="form-inline">
+								  <div class="form-group">
+								    <label for="exampleInputName2">商品编码</label>
+								    <input type="text" class="form-control" name="name" id="code">
+								  </div>
+								  <div class="form-group">
+								    <label for="exampleInputEmail2">商品名称</label>
+								    <input type="text" class="form-control" name="code"  id="name">
+								  </div>
+								  <div class="form-group">
+								    <label for="exampleInputEmail2">商品类型</label>
+								    <input type="text" class="form-control" name="supllier" id="type">
+								  </div>
+								  <div class="form-group">
+								    <label for="exampleInputEmail2">商品数量</label>
+								    <input type="text" class="form-control" name="supllier" id="number">
+								  </div> 
+								  <div class="form-group">
+								    <label for="exampleInputEmail2">商品单位</label>
+								    <input type="text" class="form-control" name="supllier" id="unit">
+								  </div> 
+								  <div class="form-group">
+								    <label for="exampleInputEmail2">商品价格</label>
+								    <input type="text" class="form-control" name="price" id="price">
+								  </div>
+								</form>
+							</div>
+
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+								<button type="button" class="btn btn-primary" id="btn_save">保存</button>
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+
+				<div id="datalist">
+					<table border="1" id="datalists">
+					    <thead>
+					      <tr>
+					        <th>商品编码</th>
+					        <th>商品名称</th>
+					        <th>商品类型</th>
+							<th>商品数量</th>
+							<th>商品单位</th>
+							<th>商品价格</th>
+							<th>操作</th>
+					      </tr>
+					    </thead>
+					    <tbody id="tbody">
+					    	
+					    </tbody>
+				    </table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
