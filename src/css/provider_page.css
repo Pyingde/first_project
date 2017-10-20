@@ -1,0 +1,45 @@
+.bigbox { min-width: 1200px; }
+
+#Header { width: 100%; height: 100px; background-color: #1A2732; }
+
+#Lnav { width: 200px; height: 580px; background-color: #394A59; float: left; }
+
+#right { width: 1000px; height: 580px; padding: 20px 10px; background: #EEEEEE; float: left; }
+
+#right .header { background-color: white; font-size: 14px; padding: 5px; }
+
+#right .header span { display: inline-block; padding: 0px 5px; }
+
+#right .header a { color: #797979; }
+
+#right .header i { color: #797979; padding-left: 5px; }
+
+#right .main { margin-top: 10px; }
+
+#right .main .main_header { background-color: #F7F7F7; }
+
+#right .main .main_header span { display: inline-block; padding: 5px 5px 5px 10px; }
+
+#right .main .main_header input { margin-left: 40px; }
+
+#right .main .main_header button a { color: #555555; text-decoration: none; }
+
+#right .main .main_table { margin-top: 10px; }
+
+#right .main .main_table table { width: 100%; background-color: white; text-align: center; line-height: 35px; overflow: scroll; }
+
+#right .main .main_table table th { width: 200px; height: 35px; text-align: center; }
+
+#right .main .main_table table td { width: 200px; height: 35px; }
+
+#right .main .main_table table td span { display: block; line-height: 35px; height: 100%; cursor: pointer; }
+
+#right .main .main_foot { background-color: white; }
+
+#right .main .main_foot span { display: inline-block; font-size: 12px; width: 50px; height: 25px; line-height: 25px; text-align: center; border: 1px solid #EEEEEE; }
+
+#right .main .main_foot span.page_num { margin-left: 30px; }
+
+#right .main .main_foot span.active { background-color: #1A2732; color: white; }
+
+#right .main .main_foot input { width: 50px; text-align: center; }

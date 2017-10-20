@@ -1,0 +1,14 @@
+﻿#过滤压缩包
+*.zip
+
+#过滤单个文件
+gulpfile.js
+package.json
+test.html
+25.mp3
+
+#过滤文件夹
+doc/
+scss/
+#过滤文件夹
+node_modules/
