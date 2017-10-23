@@ -7,44 +7,25 @@
     <base href="../" />
     <link rel="stylesheet" type="text/css" href="css/base.css" />
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css" />
-<!-- http://10.3.131.10/csx/first_project/src/html/fukuan.html -->
-    <script src="lib/jquery-3.2.1.js"></script>
-    <script type="text/javascript" src="lib/jquery-ui-1.12.1/jquery-ui.js"></script>
     <script src="lib/common.js"></script>
-    <script type="text/javascript" src="lib/socket.io.js"></script>
+    <script src="lib/jquery-3.2.1.js"></script>
+    <script src="lib/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="lib/socket.io.js"></script>
 
 </head>
 <body>
     <h1>付款金额：<span id="mon">0</span>元</h1>
     <button type="button" class="btn btn-default btn-lg btn-block" id="but">确认付款</button>
     <script type="text/javascript" >
-    var socket = io("ws://10.3.131.29:8818");
     $(()=>{
-        console.log( location.href)
-        var a = location.href;
-        var b = a.indexOf("?");
-        if(b == -1){
-            return false;
-        }
-        console.log(b)
-        var c = a.substring(b+1)
-        console.log(c)
-        $('#mon').html(c)
+        var socket = io("ws://"+fukuanIo+":8818");
+        socket.on('finish', function(data){
+            $('#mon').html(data);
+        })
+        $('#but').click(function(){
+            socket.emit('pay',$('#mon').html());
+        })
     })
-
-    // -------------------------------
-   
-    
-    $('#but').click(function(){
-        socket.emit('pay','true');
-    })
-    
-        // $.post(baseUrl+"/moneyto", {"ip":"999"}
-        //     , function(response){
-        //         console.log(response.money)
-        //         $('#mon').html(response.money)
-        //     })
-
     </script>
 </body>
 </html>

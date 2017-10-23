@@ -1,8 +1,8 @@
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
 var db;
-// var url = "mongodb://10.3.131.16:27017/market";
-MongoClient.connect("mongodb://10.3.131.16:27017/market", function(err, database) {
+
+MongoClient.connect("mongodb://10.3.131.23:27017/market", function(err, database) {
   if(err) throw err;
   
   db = database;

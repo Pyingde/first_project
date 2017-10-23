@@ -4,7 +4,6 @@ var db = require("../DBHelper.js");
 
 module.exports = {
     Register: function(app){
-
         // 接收json请求
         app.use(bodyparser.json());
         // 解析utf-8

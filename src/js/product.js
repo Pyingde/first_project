@@ -1,16 +1,17 @@
 jQuery(function($){
 
 
-		$('.modal').modal({
+		$('#new').modal({
 			show: false
 		});
 		$('.btnadd').click(function(){
-			$('.modal').modal('toggle');
+			$('#new').modal('toggle');
 		})
 
 		///点击删除操作
 		$('tbody').on('click', '.delete', function(){
 			var code = $(this).parent().siblings('.code').html();
+			// console.log($(this).parent().parent())
 			if(code == "") {
 				alert("系统错误");
 				return;
@@ -20,32 +21,55 @@ jQuery(function($){
 					
 				})
 			}
+			$(this).parent().parent().remove()
 		})
 
 		//点击修改操作
-		$('table').bind('click', '.update', function(){
+		$('tbody').on('click', '.update', function(e){
+			$('#news').modal({show: false});
+			$('#news').modal('toggle');
+
+			var _code = $(this).parent().siblings('.code').html();
+			$('#code1').val(_code);
+			var _name = $(this).parent().siblings('.name').html();
+			$('#name1').val(_name);
+			var _type = $(this).parent().siblings('.type').html();
+			$('#type1').val(_type);
+			var _number = $(this).parent().siblings('.number').html();
+			$('#number1').val(_number);
+			var _unit = $(this).parent().siblings('.unit').html();
+			$('#unit1').val(_unit);
+			var _price = $(this).parent().siblings('.price').html();
+			$('#price1').val(_price);
+
+			$('#btn_uptate').on('click',function(){
+				$.post("http://localhost:666/updateproduct", {
+					code: $('#code1').val(),
+					name: $('#name1').val(),
+					type: $('#type1').val(),
+					number: $('#number1').val(),
+					unit: $('#unit1').val(),
+					price: $('#price1').val(),
+
+				},function(response){
+					console.log(response);	
+				})
+				console.log(555555);
+				console.log($('#number1').val())
+			});
+
 			
+
 		})
 
-		// var $main = $('.main');
-		// var $chart = $('.chart');
+
+
+		
 		var $btnadd = $('.btnadd');
-		// var $table = $('#table');
 		var $tbody = $('.tbody')
 		var $save = $('#btn_save')
 		var $del = $('.btn_del')
 		var $datalists = $('#datalists')
-		// $btnadd.on('click',function(){
-		// 	var Tr = $(".tbody").children().first();
-		// 	console.log(Tr);
-		// 	var newTr = Tr.clone().show();
-		// 	$(".tbody").append(newTr);
-		// })
-
-		// $del.on('click',function(){
-		// 	// console.log(666)
-		// 	$(this).parent().parent().remove();
-		// })
 
 		$save.on('click',function(){
 			console.log($('#code').val())
@@ -56,26 +80,17 @@ jQuery(function($){
 				number: $('#number').val(),
 				unit: $('#unit').val(),
 				price: $('#price').val(),
+				class: $('#class').val(),
+				tiaoma: $('#tiaoma').val(),
+				rebate: $('#rebate').val(),
 			},function(response){
-				// $('#new').modal("hide");
-				// if(response.data.state == true) {
-				// 	//成功
-				// }else{
-				// 	//失败
-				// }
 				console.log(response);	
 			})
 		})
 
-		// var input = 
-		// input.onblur = function(){
-		// 				target.innerHTML = this.value;
-		// 			}
 
 			$.post('http://localhost:666/product',{},function(response){
-			// console.log(response);	
-
-			// var tbody = $('<tbody></tbody>')[0];
+			
 
 			tbody.innerHTML = response.data.map(item=>{
 					// console.log(item)
@@ -83,10 +98,10 @@ jQuery(function($){
 					return `<tr>						
 						<td class="code">${item.code}</td>
 						<td class="name">${item.name}</td>
-						<td>${item.type}</td>
-						<td>${item.number}</td>
-						<td>${item.unit}</td>
-						<td>${item.price}</td>
+						<td class="type">${item.type}</td>
+						<td class="number">${item.number}</td>
+						<td class="unit">${item.unit}</td>
+						<td class="price">${item.price}</td>
 						<td><span class="glyphicon glyphicon-remove delete"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="glyphicon glyphicon-wrench update"></span></td>
 					</tr>`
 				}).join('');
@@ -114,10 +129,10 @@ jQuery(function($){
 						return `<tr>						
 							<td class="code">${item.code}</td>
 							<td class="name">${item.name}</td>
-							<td>${item.type}</td>
-							<td>${item.number}</td>
-							<td>${item.unit}</td>
-							<td>${item.price}</td>
+							<td class="type">${item.type}</td>
+							<td class="number">${item.number}</td>
+							<td class="unit">${item.unit}</td>
+							<td class="price">${item.price}</td>
 							<td><span class="glyphicon glyphicon-remove del"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="glyphicon glyphicon-wrench mdf"></span></td>
 						</tr>`
 					}).join('');

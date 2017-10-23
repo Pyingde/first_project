@@ -25,13 +25,15 @@ html,body{overflow:hidden;}
 .put{border:0 none; }
 
 /*操作部分*/
-.op{padding-left:5px; position:absolute; bottom:0px; height: 25%; background: #f5f5f5; width: 100%;     max-width: 100%; /*display:flex;*/ border-top:2px solid #ccc; }
+.op{padding-left:5px; position:absolute; bottom:0px; height: 25%; background: #f5f5f5;  display:flex; border-top:2px solid #ccc; }
 .op input{ margin-top:5px; height: 30px; width: 95%;}
 .op span{width: 90px; display:inline-block; font-size:16px; font-weight:900; margin-top:5px;}
 .money{width:28%; float: left;}
 .front{width:28%;float: left;}
 .click{width:44%; padding: 10px 0 0 20px; float: left;}
 .click button{width: 40%; margin:10px; height: 40px; font-size:21px; }
+
+
 /*弹窗*/
 .zhezhao{width: 2500px; height: 2500px;position:relative; left: -800px;top: -500px;background: #222; opacity:0.3; z-index:1; display:none;}
 .way{

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>项目说明</title>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css" />
+    <script src="lib/jquery-3.2.1.js"></script>
+    <style>
+        div{padding:10px;}
+        h4{text-align:center; color:#111;}
+        span{color:#26c472;}
+        p{border:2px solid RGB(250,90,90); margin-bottom:20px; padding:5px; border-radius:4px; font-size:16px; padding-left:15px;}
+    </style>
+</head>
+<body>
+    <button type="button" class="btn btn-default btn-lg btn-block">项目说明</button>
+    <div>
+        <h4>环境配置</h4>
+        <p>
+        环境配置：mongo express socket socket.io body-parser <br />
+        ip: common.js  <br />
+        DB: 数据库所在ip地址
+        </p>
+        <h4>文件走向</h4>
+        <p>
+            1、登录<br />
+            html/login.html 登录页面（用户名：aaa ; 密码：123 ;）
+                登录后跳转 --> index.html<br /><br />
+            2、index.html <br />
+            仓库管理下的三个模块任意一个都是跳转到仓库管理模块 --> html/product.html <br />
+            采购管理 -> 供应商管理 --> 供应商管理模块 --> html/provider_page.html <br />
+            采购管理 -> 采购管理、收货管理、退货管理 --> shopping.html <br />
+            收银 --> html/proceeds.html 
+            3、仓库管理  -- > 查询 新增 删除 <br />
+            4、采购-供应商 -- > 查找 新增（html/provider_add.html） 删除 修改（html/shopping_updata.html）<br />
+            5、采购-收货  -- > 查找 新增（html/shopping_add.html） 删除 修改（html/shopping_updata.html） 打印进货订单表（html/table.html） 打印退货表 （html/table.html）<br />
+            6、收银 -- > 结算 落单 打印 收款（html/fukuan.html）<br />
+            
+        </p>
+    </div>
+    <button type="button" class="btn btn-default btn-lg btn-block">（组长）陈盛兴</button>
+    <div class="c">
+        <h4>登录模块，load</h4>
+        <p>
+        简单实现从数据库验证用户登录。
+        文件：<span>login.html</span> & <span>login.css</span> & <span>login.js</span>
+        </p>
+        <h4>收银模块</h4>
+        <p>计算 条码识别 按键监听 小票数据</p>
+    </div>
+    <button type="button" class="btn btn-default btn-lg btn-block">童善根</button>
+    <div class="t">
+        <h4>仓库模块</h4>
+        <p>增删查</p>
+    </div>
+    <button type="button" class="btn btn-default btn-lg btn-block">潘英德</button>
+    <div class="p">
+        <h4>采购模块</h4>
+        <p>增删查改 打印</p>
+    </div>
+    <script>
+    $(()=>{
+        $('button').next().css({"display":"none"})
+        $('button').each(function(){
+             $(this).click(function(){
+                $(this).next().slideToggle();
+             })
+        })
+
+    })
+    </script>
+</body>
+</html>

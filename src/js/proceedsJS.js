@@ -1,5 +1,32 @@
 define(['jquery'], function($){
     return ()=>{
+        // 付款监听
+        var socket = io("ws://"+fukuanIo+":8818");
+        socket.on('ok', function(data){
+
+            if(data == $('#receipt').val()){
+
+                $('#qrcode').fadeToggle(900,function(){
+                    $('#queren').fadeToggle(900);
+                });
+                $('#esc_zhifu').fadeOut();
+                setTimeout(function(){
+                    $('#eE').fadeToggle(900,function(){
+                        $('.zhezhao').css("display","none");
+                        $('#queren').css("display","none");
+                        $('#qrcode').fadeToggle()
+                        $('#esc_zhifu').fadeToggle()
+                        $('#qrcode').children().remove();
+                    });
+
+                },3000)
+            }
+        })
+        // .op的宽度
+        $('.op').width($('table').width());
+        $(window).resize(function(){
+            $('.op').width($('table').width());
+        })
         // 弹窗居中
         var left = $('body').innerWidth()/2-$('.way').innerWidth()/2;
         var top  = $('body').innerHeight()/2-$('.way').innerHeight()/2;
@@ -101,7 +128,7 @@ var txt = `无阻超市收银系统 \n
 
                 var Over_voucher = {"DDip":DDip, "text":DDall, "money":$('#receipt').val() }
 
-                // $.post(baseUrl+"/voucher", Over_voucher
+                // $.post(baseIo+COM_port+"/voucher", Over_voucher
                 // , function(response){
                 //     console.log(response);
                 //     if(response === true){
@@ -170,7 +197,7 @@ var txt = `无阻超市收银系统 \n
                     // 折扣修改也没用，计算折扣取用数据库数据计算
                     var html = $(this).html();
                     var w = $(this).width();
-                    // 双击的时候清空内容
+                    // 双击的op时候清空内容
                     $(this).html(`<input class="put" type="text" value="${html}" />`);
 
                     $(this).children().dblclick(function(){
@@ -185,7 +212,7 @@ var txt = `无阻超市收银系统 \n
                     })
                 })
                 // 根据商品条码从数据库提取数据
-                $.post(baseUrl+"/sy", {'tiaoma':$('.ip input').val()}
+                $.post(baseIo+COM_port+"/sy", {'tiaoma':$('.ip input').val()}
                 , function(response){
                     console.log(response)
                     // 里面的内容不影响外面的操作
@@ -291,24 +318,23 @@ var txt = `无阻超市收银系统 \n
             // 退出
             if(e.keyCode === 27){}
         })
-        // .op的宽度
-        $('.op').width($('table').width());
+        
         // 落单挂单提单打印结算退出
         $('#butLD').click(function(){fn.LD();});
-
-
         $('#butprint').click(function(){fn.print();});
         $('#butOver').click(function(){fn.Over();});
+
         // 点击网络支付弹出二维码
-        // var socket = io("ws://localhost:8818");
         $('.weixin').click(function(){
-            // $('#esc_zhifu').fadeToggle();
+            socket.emit('money',$('#receipt').val());
             $('.way').fadeToggle(600,function(){
                 $('#eE').fadeToggle();
             })
         })
+        // 退出
         $('#esc_zhifu').click(function(){
-            $.post(baseUrl+"/moneydel", {"ip":"999"}
+             $('#qrcode').children().remove();
+            $.post(baseIo+COM_port+"/moneydel", {"ip":"999"}
                 , function(response){
 
                 })

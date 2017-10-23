@@ -9,8 +9,8 @@ h1{
     font-size: 30px;
 
     position: relative;
-    margin-top: 8px;
     margin-bottom: 0px;
+    margin-top:0px;
     border-bottom:2px solid #fff;
     border-left:6px solid #000;
     border-right:6px solid #000;
@@ -21,8 +21,9 @@ h1{
     width: 180px;
 }
 
-#Lnav .lnav>li{
+#Lnav .lnav>li>a{
         /*background: rgb(46, 59, 70);*/
+    cursor:pointer;
 }
 #Lnav .lnav>li .xia{
     float:right;
