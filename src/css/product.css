@@ -6,7 +6,10 @@
 .container-fluid .row .main .chart table tr td input {
   width: 100px; }
 
+.container-fluid .row .main #datalists{margin-top: 50px; margin-left: 100px;}
+
 .container-fluid .row .main #datalist #datalists tr th, .container-fluid .row .main #datalist #datalists tr td {
-  width: 110px;
-  height: 30px;
+  width: 130px;
+  height: 35px;
   text-align: center; }
+
