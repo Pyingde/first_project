@@ -32,8 +32,15 @@ module.exports = {
 
         // 用户管理
         userRouter.Register(app);
+<<<<<<< HEAD
         // 收银管理
         // proceedsRouter.
+=======
+        // 收银sy管理
+        proceedsRouter.SY(app)
+        proceedsRouter.Voucher(app)
+        proceedsRouter.Money(app)
+>>>>>>> 57b57b639023f49977418e017551c5234dd302c4
         // 产品管理
         productRouter.Register(app);
         // 采购管理
@@ -41,6 +48,9 @@ module.exports = {
         //供应商
         ProviderRouter.Register(app);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 57b57b639023f49977418e017551c5234dd302c4
     }
 }

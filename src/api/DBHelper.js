@@ -1,8 +1,13 @@
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
 var db;
+<<<<<<< HEAD
 // var url = "mongodb://10.3.131.23:27017/market";
 MongoClient.connect("mongodb://localhost:27017/market", function(err, database) {
+=======
+
+MongoClient.connect("mongodb://10.3.131.23:27017/market", function(err, database) {
+>>>>>>> 57b57b639023f49977418e017551c5234dd302c4
   if(err) throw err;
   
   db = database;

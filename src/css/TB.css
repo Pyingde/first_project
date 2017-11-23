@@ -9,8 +9,13 @@ h1{
     font-size: 30px;
 
     position: relative;
+<<<<<<< HEAD
     margin-top: 8px;
     margin-bottom: 0px;
+=======
+    margin-bottom: 0px;
+    margin-top:0px;
+>>>>>>> 57b57b639023f49977418e017551c5234dd302c4
     border-bottom:2px solid #fff;
     border-left:6px solid #000;
     border-right:6px solid #000;
@@ -21,8 +26,14 @@ h1{
     width: 180px;
 }
 
+<<<<<<< HEAD
 #Lnav .lnav>li{
         /*background: rgb(46, 59, 70);*/
+=======
+#Lnav .lnav>li>a{
+        /*background: rgb(46, 59, 70);*/
+    cursor:pointer;
+>>>>>>> 57b57b639023f49977418e017551c5234dd302c4
 }
 #Lnav .lnav>li .xia{
     float:right;

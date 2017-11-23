@@ -25,17 +25,31 @@ $(()=>{
             return false;
         }
         $.post(baseUrl+"/login", {
+<<<<<<< HEAD
             'name': $('#username').val(),
+=======
+            'username': $('#username').val(),
+>>>>>>> 57b57b639023f49977418e017551c5234dd302c4
             'password': $('#password').val(),
         }
         , function(response){
             // response=JSON.parse(response)
+<<<<<<< HEAD
             if(response != false){
                 alert('登录成功');
                 // window.location.href='http://localhost/csx/first_project/src';
                 console.log(response)
             } else {
                 alert('用户或密码输入有误');
+=======
+            if(response == false){
+                alert('用户或密码输入有误');
+                return false;
+            } else if(response == true){
+                alert('登录成功');
+                window.location.href='http://localhost/csx/first_project/src';
+                console.log(response)
+>>>>>>> 57b57b639023f49977418e017551c5234dd302c4
             }
         })
     }

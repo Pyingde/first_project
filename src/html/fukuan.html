@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>确认付款</title>
+    <base href="../" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css" />
+    <script src="lib/common.js"></script>
+    <script src="lib/jquery-3.2.1.js"></script>
+    <script src="lib/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="lib/socket.io.js"></script>
+
+</head>
+<body>
+    <h1>付款金额：<span id="mon">0</span>元</h1>
+    <button type="button" class="btn btn-default btn-lg btn-block" id="but">确认付款</button>
+    <script type="text/javascript" >
+    $(()=>{
+        var socket = io("ws://"+fukuanIo+":8818");
+        socket.on('finish', function(data){
+            $('#mon').html(data);
+        })
+        $('#but').click(function(){
+            socket.emit('pay',$('#mon').html());
+        })
+    })
+    </script>
+</body>
+</html>

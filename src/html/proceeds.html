@@ -4,12 +4,26 @@
     <meta charset="UTF-8" />
     <title>收银页面</title>
     <base href="../" />
+<<<<<<< HEAD
+=======
+
+>>>>>>> 57b57b639023f49977418e017551c5234dd302c4
     <link rel="stylesheet" type="text/css" href="css/base.css" />
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="css/TB.css" />
     <link rel="stylesheet" type="text/css" href="css/proceeds.css" />
+<<<<<<< HEAD
     <script src="lib/require.js" data-main="js/proceeds"></script>
     
+=======
+
+    <script src="lib/common.js"></script>
+    <script type="text/javascript" src="lib/socket.io.js"></script>
+    <script src="js/eE.js"></script>
+    <script src="lib/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="lib/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="lib/require.js" data-main="js/proceeds"></script>
+>>>>>>> 57b57b639023f49977418e017551c5234dd302c4
 </head>
 <body>
     <div id="Header"></div>
@@ -18,12 +32,17 @@
         <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="index.html">Home</a> ></li>
             <li><i class="icon_document_alt"></i>收银 </li>
+<<<<<<< HEAD
             <!-- 扫码枪 ->  .in input -->
             <li class="ip">商品条码：<input type="text" value="123456"/></li>
         </ol>
         <!-- 音频位置 -->
         <div id="embed"></div>
         
+=======
+            <li class="ip">商品条码：<input type="text" value="123456"/></li>
+        </ol>
+>>>>>>> 57b57b639023f49977418e017551c5234dd302c4
         <table class="table table-bordered">
                 <thead>
                   <tr>
@@ -44,6 +63,7 @@
                   </tr>
                 </thead>
                 <tbody>
+<<<<<<< HEAD
                   <!-- <tr>
                     <th scope="row">1</th>
                   </tr>
@@ -55,6 +75,10 @@
                   </tr>
  -->            </tbody>
               </table>
+=======
+                </tbody>
+        </table>
+>>>>>>> 57b57b639023f49977418e017551c5234dd302c4
 
         <div class="op">
             <div class="money">
@@ -68,6 +92,7 @@
                 <span>前单找零：</span><input type="text" class="form-control"/>
             </div>
             <div class="click">
+<<<<<<< HEAD
                 <button>落单(Del)</button>
                 <button>挂单(G)</button>
                 <button>提单(T)</button>
@@ -78,6 +103,57 @@
         </div>
 
 
+=======
+                <button id="butLD">落单(Del)</button>
+                <button id="but">挂单(G)</button>
+                <button id="but">提单(T)</button>
+                <button id="butprint">打印(D)</button>
+                <button id="butOver" >结算(Space)</button>
+                <button id="but">退出(Esc)</button>
+            </div>
+        </div>
+        <!-- ------弹窗----- -->
+        <div class="way" >
+            <h2>付款方式</h2>
+            <button type="button" class="btn btn-default btn-lg btn-block weixin">微信支付
+            </button>
+            <button type="button" class="btn btn-default btn-lg btn-block weixin">支付宝支付
+            </button>
+            <button type="button" class="btn btn-default btn-lg btn-block">
+            现金交付
+            <!-- <dl>
+                <dt>
+                    <dd>应收：<span></span></dd>
+                    <dd>收款：<span></span></dd>
+                    <dd>找零：<span></span></dd>
+                </dt>
+            </dl> -->
+            </button>
+        </div>
+        <!-- 二维码 -->
+        <div id="eE">
+            <div id="qrcode">
+            </div>
+            <div id="queren">
+                <h2>付款完成</h2>
+            </div>
+            <button type="button" class="btn btn-default btn-lg btn-block " id="esc_zhifu">退出
+            </button>
+        </div>
+        <div class="zhezhao"></div>
+        <script type="text/javascript">
+            
+
+            $('#butOver').click(function(){
+                var qrcode = new QRCode(document.getElementById("qrcode"), {
+                    width : 177,//设置宽高
+                    height : 177
+                });
+                qrcode.makeCode("http://"+fukuanIo+"/csx/first_project/src/html/fukuan.html");
+            })
+            $( ".way" ).draggable();
+        </script>
+>>>>>>> 57b57b639023f49977418e017551c5234dd302c4
     </div>
 </body>
 </html>

@@ -6,6 +6,7 @@
 .container-fluid .row .main .chart table tr td input {
   width: 100px; }
 
+<<<<<<< HEAD
 .container-fluid .row .main #datalists{margin-top: 50px; margin-left: 100px;}
 
 .container-fluid .row .main #datalist #datalists tr th, .container-fluid .row .main #datalist #datalists tr td {
@@ -13,3 +14,24 @@
   height: 35px;
   text-align: center; }
 
+=======
+.container-fluid .row .main #datalist #datalists tr th, .container-fluid .row .main #datalist #datalists tr td {
+  width: 110px;
+  height: 30px;
+  text-align: center; }
+
+body{height: 1000px; overflow-x:hidden; overflow-y:auto;}
+#btnNewItem{
+    width: 925px;
+    margin:8px 0 10px 14px;
+
+    display:block;
+}
+#datalist{
+    margin-left:14px;
+    width: 925px;
+}
+#datalists{
+    width: 100%;
+}
+>>>>>>> 57b57b639023f49977418e017551c5234dd302c4
